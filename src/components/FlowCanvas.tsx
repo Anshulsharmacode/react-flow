@@ -75,13 +75,12 @@ const getInitialNodes = () => {
   return nodes;
 };
 
-// Add labels to edges with improved routing and animations
+// Remove animation property from edges
 const initialEdges = [
   {
     id: "e1-2",
     source: "1",
     target: "2",
-    animated: true,
     label: "Next Step",
     style: { stroke: "#000", strokeWidth: 3 },
     labelStyle: { fill: "#000", fontWeight: 600 },
@@ -92,7 +91,6 @@ const initialEdges = [
     id: "e2-3",
     source: "2",
     target: "3",
-    animated: true,
     label: "Customize",
     style: { stroke: "#000", strokeWidth: 3 },
     labelStyle: { fill: "#000", fontWeight: 600 },
@@ -103,7 +101,6 @@ const initialEdges = [
     id: "e3-4",
     source: "3",
     target: "4",
-    animated: true,
     label: "Review",
     style: { stroke: "#000", strokeWidth: 3 },
     labelStyle: { fill: "#000", fontWeight: 600 },
@@ -125,7 +122,7 @@ function FlowContent() {
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const { getNode, setCenter } = useReactFlow();
 
-  // Add nodes one by one with animation
+  // Replace animated node addition with immediate initialization
   React.useEffect(() => {
     const initialNodes = getInitialNodes();
     const initialEdgesList = initialEdges;

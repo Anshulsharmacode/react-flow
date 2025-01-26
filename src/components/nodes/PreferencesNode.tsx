@@ -28,7 +28,7 @@ function PreferencesNode() {
   };
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-lg min-w-[400px]">
+    <div className="bg-white p-6 rounded-xl shadow-lg ">
       <Handle type="target" position={Position.Top} />
       <form onSubmit={handleSubmit} className="space-y-4">
         <h3 className="text-2xl font-bold text-black">
